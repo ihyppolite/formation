@@ -30,7 +30,55 @@
 
         <p>{{tab[0]  % 2  == 0 ? 'pair' : 'impair' }}</p>
         <p>{{ message.length}}</p>
-        <p> {{direBonjour()}}</p>
+        <p> {{direBonjour()}}</p> 
+        <p> {{bonjourNom('bob')}}</p>
+
+        <h2>V-For</h2>
+        <ul>
+            <li v-for=" elt of tab">
+            {{ elt }}
+        </li>
+        </ul>
+
+        <ul>
+            <li v-for=" elt in tab">
+            {{ elt }}
+        </li>
+        </ul>
+
+        <ul>
+            <li v-for=" (elt, ind ) in tab">
+                {{ ind }} : {{ elt }}
+        </li>
+        </ul>
+
+
+        
+        <ul>
+            <li v-for=" elt in personne">
+            {{ elt }}
+        </li>
+        </ul>
+
+        <ul>
+            <li v-for=" (value, key , ind ) in personne">
+                {{ ind }} : {{ key }} : {{ value }}
+        </li>
+        </ul>
+        <h2>EXO1</h2>
+        <ul>
+            <li v-for=" elt in personnes">
+            {{ elt.id }} :  {{ elt.nom }}
+        </li>
+        </ul>
+        <h2>EXO2</h2>
+        <ul>
+            <li v-for=" elt in personnes">
+             <template v-for =" key  in elt">
+                {{ key }}
+             </template>
+        </li>
+    
     </div>
 
     <script src="https://unpkg.com/vue@next"></script>
