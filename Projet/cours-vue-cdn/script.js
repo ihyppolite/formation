@@ -3,8 +3,16 @@
 const app=Vue.createApp({
     data() {
         return {
-            message : "Hello World"
+            message : "<span>Hello world</span>",
+            tab : [2,3,8,5],
+            personne : { id : 1 , nom : 'doe', prenom : 'toto'}
         }
+    },
+
+    methods : {
+            direBonjour(){
+                return 'Bienvenue dans le cours Vue.js 3'
+            }
     }
 })
 
