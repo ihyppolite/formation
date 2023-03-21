@@ -4,8 +4,9 @@
   </div>
   <div>
     Hello
-    <slot name="nom"> HUMAIN</slot> 
+    <slot default="nom"> humain </slot> 
     <slot name="prenom"> </slot> 
+    from {{ ville }}
   </div>
 </template>
 
@@ -15,7 +16,15 @@ export default {
   data()      {
   return {
     msg : 'Hello world'
-  } }
+  } },
+  props:{
+    ville: 
+    {
+      type:String,
+      default : 'Paris'
+    }
+
+  }
  
 }
 </script>

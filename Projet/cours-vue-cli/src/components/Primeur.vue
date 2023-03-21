@@ -31,10 +31,8 @@ export default {
 
 <template>
   <div v-for="(elt, ind) in produits" :key="ind">
-    <ProduitComponent>
-      <template #nom>{{ elt.nom }}</template>
-      <template #prix></template>
-      <template #quantite></template>
+    <ProduitComponent :proproduits = elt>
+      
     </ProduitComponent>
   </div>
   <div>

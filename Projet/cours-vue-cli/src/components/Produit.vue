@@ -1,13 +1,21 @@
 <script>
 export default {
   name: "ProduitComponent",
+  props:{
+    proproduits: 
+    {
+      nom: String,
+      prix: String,
+      quantite: String
+    }
+  }
 };
 </script>
 
 <template>
   <div>
-    <p><slot name="nom"> </slot></p>
-    <p><slot name="prix"> </slot></p>
-    <p><slot name="quantite"> </slot></p>
+    <p> {{ proproduits.nom }}</p>
+    <p> {{ proproduits.prix }}</p>
+    <p> {{ proproduits.quantite }}</p>
   </div>
 </template>

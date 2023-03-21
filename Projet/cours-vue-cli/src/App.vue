@@ -3,7 +3,9 @@
  <HelloWorld > 
   <template #default> Wick</template>
   <template  #prenom> john </template>
-</HelloWorld>
+</HelloWorld >
+
+<HelloWorld ville="Marseille" />
 
 
 <PrimeurComponent></PrimeurComponent>
