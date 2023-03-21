@@ -6,10 +6,12 @@ import AdresseView from '@/views/AdresseView.vue'
 import TableauView from '../views/TableauView.vue'
 
 const routes = [
+  //alias
   {
     path: '/',
     name: 'home',
-    component: HomeView
+    component: HomeView,
+    alias: ['/home', '/accueil']
   },
   {
     path: '/adresse',
@@ -39,7 +41,13 @@ const routes = [
     path: '/about',
     name: 'about',
     component: () => import('../views/AboutView.vue')
-  }
+  },
+  // redirection 
+  {
+    path: '/person',
+    redirect: '/personne'
+
+  },
 ]
 
 const router = createRouter({
