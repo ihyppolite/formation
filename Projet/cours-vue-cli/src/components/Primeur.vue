@@ -18,6 +18,7 @@ export default {
         prix: null,
         quantite: null,
       },
+      total: 0
     };
   },
   methods: {
@@ -25,11 +26,15 @@ export default {
       this.produits.push(this.produit);
       this.produit = {};
     },
+    recalculerTotal( prd,qteCommande ) {
+      this.total += qteCommande * prd.prix
+}
   },
 };
 </script>
 
 <template>
+  <div>   <h3>Montant total : {{ total }}</h3></div>
   <div>
     <input type="text" v-model="produit.nom" placeholder="Nom" />
     <input type="text" v-model="produit.quantite" placeholder="Quantité" />
@@ -37,10 +42,12 @@ export default {
     <button @click="ajouter">Ajouter</button>
     <ul>
       <ProduitComponent
+      @send-data="recalculerTotal(elt ,$event)"
         v-for="(elt, ind) of produits"
         :key="ind"
         :produit="elt"
       >
+    
       </ProduitComponent>
     </ul>
   </div>
