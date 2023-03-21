@@ -10,6 +10,7 @@
 
 
 <PrimeurComponent></PrimeurComponent>
+<ReactiveValue></ReactiveValue>
  
 </template>
 
@@ -17,11 +18,14 @@
  import HelloWorld from './components/HelloWorld.vue'
  import PrimeurComponent from '@/components/Primeur.vue'
 
+import ReactiveValue from './components/ReactiveValue.vue'
+
 export default {
   name: 'App',
   components: {
     HelloWorld,
-    PrimeurComponent
+    PrimeurComponent,
+    ReactiveValue
   },
     data(){
       return {

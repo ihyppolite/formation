@@ -9,34 +9,53 @@
     from {{ ville }}
   </div>
   <div>
-    <input type="text" v-model="nom" placeholder="nom">
+    <input type="text" v-model="nom" placeholder="nom" ref="firstname">
     <button @click="send">Envoyer au parent</button>
   </div>
+ e>
 </template>
 
 <script>
-export default {
-  name: 'HelloWorld',
-  emits : ['envoyer'],
-  data()      {
-  return {
-    msg : 'Hello world',
-    nom :'',
-  } },
-  props:{
-    ville: 
-    {
-      type:String,
-      default : 'Paris'
-    }
 
-  },
-  methods:{
-    send() {
-      this.$emit('envoyer',this.nom)
-    }
-  }
- 
+
+
+
+export default {
+    name: "HelloWorld",
+    emits: ["envoyer"],
+    data() {
+        return {
+            msg: "Hello world",
+            nom: "",
+        };
+    },
+    props: {
+        ville: {
+            type: String,
+            default: "Paris"
+        }
+    },
+    methods: {
+        send() {
+            this.$emit("envoyer", this.nom);
+        }
+    },
+    beforeCreate() {
+        console.log("before Created");
+    },
+    created() {
+        // console.log('created');
+    },
+    mounted() {
+        // console.log('mounted');
+    },
+    updated() {
+        console.log("updated");
+    },
+    unmounted() {
+        console.log("unmounted");
+    },
+    
 }
 </script>
 
