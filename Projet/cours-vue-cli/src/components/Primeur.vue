@@ -14,33 +14,34 @@ export default {
         { nom: "poivron", prix: 5, quantite: 10 },
       ],
       produit: {
-                nom: null,
-                prix: null,
-                quantite: null
-            }
+        nom: null,
+        prix: null,
+        quantite: null,
+      },
     };
   },
   methods: {
     ajouter() {
-            this.produits.push(this.produit)
-            this.produit = {}
-        }
+      this.produits.push(this.produit);
+      this.produit = {};
+    },
   },
 };
 </script>
 
 <template>
-  <div v-for="(elt, ind) in produits" :key="ind">
-    <ProduitComponent :proproduits = elt>
-      
-    </ProduitComponent>
-  </div>
   <div>
-        <input type="text" v-model="produit.nom" placeholder="Nom">
-        <input type="text" v-model="produit.prix" placeholder="Prix">
-        <input type="text" v-model="produit.quantite" placeholder="Quantité">
-        <button @click="ajouter">
-            Ajouter
-        </button>
-    </div>
+    <input type="text" v-model="produit.nom" placeholder="Nom" />
+    <input type="text" v-model="produit.quantite" placeholder="Quantité" />
+    <input type="text" v-model="produit.prix" placeholder="Prix" />
+    <button @click="ajouter">Ajouter</button>
+    <ul>
+      <ProduitComponent
+        v-for="(elt, ind) of produits"
+        :key="ind"
+        :produit="elt"
+      >
+      </ProduitComponent>
+    </ul>
+  </div>
 </template>
