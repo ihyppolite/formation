@@ -48,6 +48,12 @@ const routes = [
     redirect: '/personne'
 
   },
+  {
+    path: '/adresse/:rue/:codePostal/:ville',
+    redirect: (chemin) => {
+      return { path: '/adresse', query: { ...chemin.params } }
+    }
+  },
 ]
 
 const router = createRouter({
