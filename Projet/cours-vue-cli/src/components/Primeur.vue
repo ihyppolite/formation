@@ -13,15 +13,18 @@ export default {
         { nom: "fraise", prix: 10, quantite: 20 },
         { nom: "poivron", prix: 5, quantite: 10 },
       ],
-      nom: "",
-      prix: "",
-      quantite: "",
+      produit: {
+                nom: null,
+                prix: null,
+                quantite: null
+            }
     };
   },
   methods: {
-    pushProduits(nom, prix, quantite) {
-      this.produits.push({ nom, prix, quantite });
-    },
+    ajouter() {
+            this.produits.push(this.produit)
+            this.produit = {}
+        }
   },
 };
 </script>
@@ -34,20 +37,12 @@ export default {
       <template #quantite></template>
     </ProduitComponent>
   </div>
-
   <div>
-    <div>
-      <label>Nom du fruit </label>
-      <input v-model="nom" type="text" />
+        <input type="text" v-model="produit.nom" placeholder="Nom">
+        <input type="text" v-model="produit.prix" placeholder="Prix">
+        <input type="text" v-model="produit.quantite" placeholder="Quantité">
+        <button @click="ajouter">
+            Ajouter
+        </button>
     </div>
-    <div>
-      <label> prix du fruit</label>
-      <input v-model="prix" type="text" />
-    </div>
-    <div>
-      <label>quantite de fruit </label>
-      <input v-model="quantite" type="text" />
-    </div>
-    <button @click="pushProduits(nom, prix, quantite)">Ajouter Produit</button>
-  </div>
 </template>
