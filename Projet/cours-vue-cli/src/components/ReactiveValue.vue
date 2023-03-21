@@ -1,5 +1,5 @@
 <script>
-import { watchEffect } from 'vue';
+import { computed,  } from 'vue';
 
 export default {
   name: "ReactiveValue",
@@ -7,13 +7,14 @@ export default {
     return {
       value1: 0,
       value2: 0,
-      value3: 0,
+      resultat: 0,
     };
   },
   created() {
-        watchEffect(() => {
-            this.value3 = this.value1 + this.value2;
-        })
+        // watchEffect(() => {
+        //     this.value3 = this.value1 + this.value2;
+        // })
+        this.resultat = computed(()=>this.value1 + this.value2)
     
   },
   mounted() {
@@ -23,5 +24,5 @@ export default {
 </script>
 
 <template>
-  <p>{{ value1 }} + {{ value2 }} = {{ value3 }}</p>
+  <p>{{ value1 }} + {{ value2 }} = {{ resultat }}</p>
 </template>
