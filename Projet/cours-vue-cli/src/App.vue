@@ -23,16 +23,16 @@ export default {
     HelloWorld,
     PrimeurComponent
   },
-  data(){
-    return {
-      nom :null
+    data(){
+      return {
+        nom :null
+      }
+    },
+    methods : {
+      afficherNom (data) {
+        this.nom = data
+      }
     }
-  },
-  methods : {
-    afficherNom (data) {
-      this.nom = data
-    }
-  }
 }
 </script>
 

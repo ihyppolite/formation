@@ -10,7 +10,7 @@
   </div>
   <div>
     <input type="text" v-model="nom" placeholder="nom">
-    <button @click="$emit('envoyer', this.nom)">Envoyer au parent</button>
+    <button @click="send">Envoyer au parent</button>
   </div>
 </template>
 
@@ -30,6 +30,11 @@ export default {
       default : 'Paris'
     }
 
+  },
+  methods:{
+    send() {
+      this.$emit('envoyer',this.nom)
+    }
   }
  
 }
