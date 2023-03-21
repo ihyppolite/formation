@@ -8,14 +8,20 @@
     <slot name="prenom"> </slot> 
     from {{ ville }}
   </div>
+  <div>
+    <input type="text" v-model="nom" placeholder="nom">
+    <button @click="$emit('envoyer', this.nom)">Envoyer au parent</button>
+  </div>
 </template>
 
 <script>
 export default {
   name: 'HelloWorld',
+  emits : ['envoyer'],
   data()      {
   return {
-    msg : 'Hello world'
+    msg : 'Hello world',
+    nom :'',
   } },
   props:{
     ville: 

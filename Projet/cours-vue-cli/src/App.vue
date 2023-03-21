@@ -1,6 +1,7 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
- <HelloWorld > 
+  <p> Nom recu de l'enfant {{ nom }}</p>
+ <HelloWorld @envoyer="afficherNom"> 
   <template #default> Wick</template>
   <template  #prenom> john </template>
 </HelloWorld >
@@ -21,6 +22,16 @@ export default {
   components: {
     HelloWorld,
     PrimeurComponent
+  },
+  data(){
+    return {
+      nom :null
+    }
+  },
+  methods : {
+    afficherNom (data) {
+      this.nom = data
+    }
   }
 }
 </script>
