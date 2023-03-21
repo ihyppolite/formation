@@ -12,7 +12,7 @@
     <input type="text" v-model="nom" placeholder="nom" ref="firstname">
     <button @click="send">Envoyer au parent</button>
   </div>
- e>
+
 </template>
 
 <script>
