@@ -9,7 +9,7 @@ import axios from 'axios'
 // .component('HelloWorld', HelloWorld)
 const app = createApp(App)
     
-    app.config.globalProperties.baseUrl = 'http://localhost:5555'
+    app.config.globalProperties.baseUrl = 'http://localhost:5555' //crée une variable globale  qui a pour nom ici baseUrl 
     
     app.use(router).use(router).use(VueAxios , axios)
     .mount('#app')
