@@ -2,30 +2,40 @@
   <div>
     <h2>Compteur</h2>
     <button @click="decrementer">-</button>
-    {{ compteur }}
+    {{ counter.valeur }}
     <button @click="incrementer">+</button>
   </div>
 </template>
-<script>
-import { ref } from "vue";
+<script setup >
+import { reactive } from "vue";
 
-export default {
-  setup() {
-    const compteur = ref(0);
+const compteur = {valeur : 0 , etat : 'null'}
+const counter = reactive(compteur )
     const decrementer = () => {
-      compteur.value--
+      counter.valeur--
     };
     const incrementer = () => {
-      compteur.value++
+      counter.valeur++
     };
 
-    return {
-      compteur,
-      decrementer,
-      incrementer,
-    };
-  },
-};
+
+// export default {
+//   setup() {
+//     const compteur = ref(0);
+//     const decrementer = () => {
+//       compteur.value--
+//     };
+//     const incrementer = () => {
+//       compteur.value++
+//     };
+
+//     return {
+//       compteur,
+//       decrementer,
+//       incrementer,
+//     };
+//   },
+// };
 // export default {
 //   data() {
 //     return {
