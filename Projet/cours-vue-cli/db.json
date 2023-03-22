@@ -6,7 +6,17 @@
       "prenom": "john",
       "age": 45
     },
-
-    { "id": 2, "nom": "dalton", "prenom": "jack", "age": 25 }
+    {
+      "id": 2,
+      "nom": "dalton",
+      "prenom": "jack",
+      "age": 25
+    },
+    {
+      "nom": "Tu",
+      "prenom": "Tu",
+      "age": "45",
+      "id": 3
+    }
   ]
 }
