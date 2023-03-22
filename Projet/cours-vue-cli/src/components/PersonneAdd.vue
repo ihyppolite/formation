@@ -1,20 +1,20 @@
 <template>
   <h2>Ajouter une Personne</h2>
-  <Form @submit="ajouterPersonne" >
+  <Form @submit="ajouterPersonne" :validation-schema="personneSchema" >
       <div>
           Nom :
-          <Field name="nom" type="text" :rules="validateName"/>
+          <Field name="nom" type="text"   />
           <ErrorMessage name="nom"/>
       </div>
       <div>
           Prénom :
-          <Field name="prenom" type="text" :rules="validateName"/>
+          <Field name="prenom" type="text" />
           <ErrorMessage name="prenom"/>
       </div>
       <div>
           Age :
           <!-- <Field name="age" type="number" :rules="'minMax:10,150'"/> utilisation de fonction globale de vee-valide -->
-          <Field name="age" type="number" :rules="validateage" />
+          <Field name="age" type="number"/>
           <ErrorMessage name="age"/>
       </div>
       <button>
@@ -36,15 +36,22 @@ export default {
   data() {
       return {
           // validateur avec yup 
-          validateName : yup
+          personneSchema : yup.object({
+          nom : yup
           .string()
           .required("Le champs est obligatoire ")
-          .matches(/^[A-Z]{1}[a-z]{19}$/ , "Le champs doit commencer par une Maj est contenir mon de 20 caracteres "),
-          validateage : yup
+          .matches(/^[A-Z]{1}[a-z]{19}$/ , "Le nom doit commencer par une Maj est contenir mon de 20 caracteres "),
+          prenom : yup
+          .string()
+          .required("Le champs est obligatoire ")
+          .matches(/^[A-Z]{1}[a-z]{19}$/ , "Le prenom doit commencer par une Maj est contenir mon de 20 caracteres "),
+          age : yup
           .number()
           .required(" le champs est obligatoire ")
           .min(0, "age min 0")
           .max(150, " age max 150")
+
+        })
 
       }
   },
