@@ -19,12 +19,17 @@ export default {
         PersonnesAdd,
     },
     mounted(){
-        axios({
-            method:"GET",
-            url: "http://localhost:5555/personnes"
-        })
-        .then(response => this.personnes = response.data)
-        .catch ( err => this.erreur = err)
+        // axios({
+        //     method:"GET",
+        //     url: "http://localhost:5555/personnes"
+        // })
+        // .then(response => this.personnes = response.data)
+        // .catch ( err => this.erreur = err)
+
+        axios 
+            .get('http://localhost:5555/personnes')
+            .then(response => this.personnes = response.data)
+            .catch(err => this.erreur = err)
     }
     
 }
