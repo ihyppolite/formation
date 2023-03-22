@@ -2,12 +2,12 @@
   <div>
     <h2>Compteur</h2>
     <button @click="decrementer">-</button>
-    {{ counter.valeur }}
+    {{ counter.valeur }} : {{ counter.etat }}
     <button @click="incrementer">+</button>
   </div>
 </template>
-<script setup >
-import { reactive } from "vue";
+<script setup>
+import { reactive , onUpdated } from "vue";
 
 const compteur = {valeur : 0 , etat : 'null'}
 const counter = reactive(compteur )
@@ -17,6 +17,16 @@ const counter = reactive(compteur )
     const incrementer = () => {
       counter.valeur++
     };
+    onUpdated(() => {
+      if(counter.valeur > 0) {
+          counter.etat =" positif"
+      }else if(counter.valeur < 0){
+        counter.etat =" negatif"
+      }else {
+        counter.etat =" null"
+      }
+    })
+     
 
 
 // export default {

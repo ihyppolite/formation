@@ -75,6 +75,7 @@ const routes = [
     name: 'compteur',
     component: () => import('../views/CompteurView.vue')
   },
+ 
 ];
 
 const router = createRouter({

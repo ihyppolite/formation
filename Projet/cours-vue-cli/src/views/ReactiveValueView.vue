@@ -1,31 +1,19 @@
-<script>
+<script setup>
+import { ref, onMounted, computed } from 'vue';
+const value1 = ref(0)
+const value2 = ref(0)
 
+onMounted(() => {
+    setInterval(
+        () => value1.value += 1,
+        2000
+    )
+})
 
-export default {
-  name: "ReactiveValue",
-  data() {
-    return {
-      value1: 0,
-      value2: 0,
-      //resultat: 0,
-    };
-  },
-  created() {
-        // watchEffect(() => {
-        //     this.value3 = this.value1 + this.value2;
-        // })
-        // this.resultat = computed(()=>this.value1 + this.value2)
-    
-  },
-  mounted() {
-    setInterval(() => (this.value1 += 1), 2000);
-  },
-  computed : {
-    resultat (){  return this.value1 + this.value2 }
-  }
-};
+const resultat = computed(() => value1.value + value2.value)
+
 </script>
 
 <template>
-  <p>{{ value1 }} + {{ value2 }} = {{ resultat }}</p>
+    <p>{{ value1 }} + {{ value2 }} = {{ resultat }}</p>
 </template>
