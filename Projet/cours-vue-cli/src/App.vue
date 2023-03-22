@@ -1,10 +1,20 @@
+
+
+
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
+ <MenuNav></MenuNav>
   <router-view/>
 </template>
+<script>
+import MenuNav from './components/MenuNav.vue'
+
+export default {
+  components : {
+    MenuNav
+  }
+}
+
+</script>
 
 <style>
 #app {

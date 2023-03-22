@@ -1,5 +1,5 @@
 <script>
-import ProduitComponent from "@/components/Produit.vue";
+import ProduitComponent from '@/components/Produit.vue'
 
 export default {
   name: "PrimeurComponent",

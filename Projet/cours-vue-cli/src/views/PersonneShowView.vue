@@ -1,7 +1,8 @@
 <script>
-
+ import PersonnesAdd from '@/components/PersonneAdd.vue'
 
 export default {
+
     data() {
         return {
             personnes: [
@@ -11,11 +12,15 @@ export default {
             ]
         };
     },
+    components: {
+        PersonnesAdd,
+    }
     
 }
 </script>
 
 <template>
+    <PersonnesAdd/>
     <h2>Gestion de personnes</h2>
     <ul>
         <li v-for="(elt , ind) in personnes" :key ="ind">

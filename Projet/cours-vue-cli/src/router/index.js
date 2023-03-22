@@ -37,11 +37,21 @@ const routes = [
     name: "personne-details",
     component: PersonneDetailsView,
   },
+  {
+    path: '/primeur',
+    name: 'primeur',
+    component: () => import('../views/PrimeurView.vue')
+  },
+  {
+    path: '/reactive',
+    name: 'reactive',
+    component: () => import('../views/ReactiveValueView.vue')
+  },
 
   {
     path: "/about",
     name: "about",
-    component: () => import("../views/AboutView.vue"),
+    component: () => import("../views/AboutView.vue"), // lazy loading
   },
   // redirection
   {

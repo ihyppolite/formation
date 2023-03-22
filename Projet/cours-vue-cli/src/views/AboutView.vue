@@ -22,9 +22,8 @@
 
 <script>
  import HelloWorld from '@/components/HelloWorld.vue'
- import PrimeurComponent from '@/components/Primeur.vue'
-
-import ReactiveValue from '@/components/ReactiveValue.vue'
+ import PrimeurComponent from '@/views/PrimeurView.vue'
+ import ReactiveValue from '@/views/ReactiveValueView.vue'
 
 export default {
   name: 'App',
