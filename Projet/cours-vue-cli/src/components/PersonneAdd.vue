@@ -23,7 +23,6 @@
 
 <script>
 // npm i vee-validate
-import axios from "axios";
 import { Field, Form, ErrorMessage } from "vee-validate";
 import * as yup from "yup";
 
@@ -63,8 +62,8 @@ export default {
     ajouterPersonne(values) {
       console.log(values);
       const self = this.$refs.personneForm
-      axios
-        .post("http://localhost:5555/personnes", values)
+      this.axios
+        .post(`${this.baseUrl}/personnes`, values)
         .then(() => {
           alert("Crée ");
           self.setValues({})

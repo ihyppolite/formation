@@ -1,6 +1,6 @@
 <script>
  import PersonnesAdd from '@/components/PersonneAdd.vue'
- import axios from 'axios'
+
 
 
 export default {
@@ -26,8 +26,8 @@ export default {
         // .then(response => this.personnes = response.data)
         // .catch ( err => this.erreur = err)
 
-        axios 
-            .get('http://localhost:5555/personnes')
+        this.axios 
+            .get(`${this.baseUrl}/personnes`)
             .then(response => this.personnes = response.data)
             .catch(err => this.erreur = err)
     }
@@ -36,12 +36,13 @@ export default {
 </script>
 
 <template>
-    <PersonnesAdd/>
+      <PersonnesAdd />
     <h2>Gestion de personnes</h2>
-    <ul>
-        <li v-for="(elt , ind) in personnes" :key ="ind">
+    <ul v-if="!erreur">
+        <li v-for="(elt, ind) in personnes" :key="ind">
             {{ elt.prenom }} {{ elt.nom }}
-            <router-link :to="{ name: 'personne-details', params : { id :elt.id} }">Consulter</router-link>
+            <router-link :to="{ name: 'personne-details', params: { id: elt.id } }">consulter</router-link>
         </li>
     </ul>
+    <p v-else>Problème de récupération de données : {{ err }}</p>
 </template>
