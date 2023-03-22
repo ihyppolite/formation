@@ -40,11 +40,11 @@ export default {
           nom : yup
           .string()
           .required("Le champs est obligatoire ")
-          .matches(/^[A-Z]{1}[a-z]{19}$/ , "Le nom doit commencer par une Maj est contenir mon de 20 caracteres "),
+          .matches(/^[A-Z]{1}[a-z]{1,19}$/ , "Le nom doit commencer par une Maj est contenir mon de 20 caracteres "),
           prenom : yup
           .string()
           .required("Le champs est obligatoire ")
-          .matches(/^[A-Z]{1}[a-z]{19}$/ , "Le prenom doit commencer par une Maj est contenir mon de 20 caracteres "),
+          .matches(/^[A-Z]{1}[a-z]{1,19}$/ , "Le prenom doit commencer par une Maj est contenir mon de 20 caracteres "),
           age : yup
           .number()
           .required(" le champs est obligatoire ")

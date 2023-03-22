@@ -1,0 +1,12 @@
+{
+  "personnes": [
+    {
+      "id": 1,
+      "nom": "wick",
+      "prenom": "john",
+      "age": 45
+    },
+
+    { "id": 2, "nom": "dalton", "prenom": "jack", "age": 25 }
+  ]
+}
