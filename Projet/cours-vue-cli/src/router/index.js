@@ -70,6 +70,11 @@ const routes = [
     name: "error",
     component: NotFoundView,
   },
+  {
+    path: '/compteur',
+    name: 'compteur',
+    component: () => import('../views/CompteurView.vue')
+  },
 ];
 
 const router = createRouter({
