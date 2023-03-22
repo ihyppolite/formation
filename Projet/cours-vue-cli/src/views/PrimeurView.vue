@@ -1,5 +1,5 @@
 <script>
-import ProduitComponent from '@/components/Produit.vue'
+import ProduitComponent from '@/components/ProduitComponent.vue'
 
 export default {
   name: "PrimeurComponent",
@@ -30,6 +30,9 @@ export default {
       this.total += qteCommande * prd.prix
 }
   },
+  provide : {
+    tva : 0.055
+  }
 };
 </script>
 
