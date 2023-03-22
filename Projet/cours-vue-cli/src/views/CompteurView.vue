@@ -1,27 +1,46 @@
 <template lang="">
   <div>
     <h2>Compteur</h2>
-    <button @onlcik="decrementer">-</button>
+    <button @click="decrementer">-</button>
     {{ compteur }}
-    <button @onlcik="incrementer">+</button>
+    <button @click="incrementer">+</button>
   </div>
 </template>
 <script>
+import { ref } from "vue";
+
 export default {
-  data() {
+  setup() {
+    const compteur = ref(0);
+    const decrementer = () => {
+      compteur.value--
+    };
+    const incrementer = () => {
+      compteur.value++
+    };
+
     return {
-      compteur: 0,
+      compteur,
+      decrementer,
+      incrementer,
     };
   },
-  methods: {
-    decrementer(){
-        this.compteur--
-
-    },
-    incrementer(){
-        this.compteur++
-    }
-  },
 };
+// export default {
+//   data() {
+//     return {
+//       compteur: 0,
+//     };
+//   },
+//   methods: {
+//     decrementer(){
+//         this.compteur--
+
+//     },
+//     incrementer(){
+//         this.compteur++
+//     }
+//   },
+// };
 </script>
 <style lang=""></style>
